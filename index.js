@@ -24,7 +24,7 @@ app.get(/./, function (req, res) {
 
 	var id = req.headers.host
 
-  var returnObject = {"ipaddress": ip.address(), "language": req.headers['accept-language'].slice(0,6), "software" : process.platform}
+  var returnObject = {"IP Address": ip.address(), "language": req.headers['accept-language'].slice(0,6), "software" :req.headers['user-agent'].split(/[\(\)]/)[1]}
 
 
   res.writeHead(200, {
